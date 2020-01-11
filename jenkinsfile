@@ -1,15 +1,15 @@
-pipeline {
-agent { label 'Master' }
-stages {
-stage ("SCM Chkout-1"){
-steps {
-git 'https://github.com/Vishwanathms/Java-Proj1'
-}
-}
-stage ("Java execute"){
-steps {
-sh label: '', script: '''javac *.java java Simple'''
-}
-}
-}
+pipeline { 
+    agent { label 'GR1' } 
+	stages { 
+        stage ("SCM Chkout-1"){
+            steps {
+                git 'https://github.com/SivaramanT/Java-Proj1'
+            }
+		}
+		stage ("Java execute"){
+			steps { 
+				sh label: '', script: '''javac *.java java Simple'''
+			}
+		}
+	}
 }
